@@ -1,17 +1,51 @@
 import React, { useEffect, useState } from "react";
 import "./userlist.css";
 import { DataGrid } from "@mui/x-data-grid";
-import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 import { Link } from "react-router-dom";
 import { userRows } from "./userListDummyData";
-import WarningAmberIcon from "@mui/icons-material/WarningAmber";
-import MessageIcon from "@mui/icons-material/Message";
 import axios from "axios";
+import Toolbar from "@mui/material/Toolbar";
+import InputBase from "@mui/material/InputBase";
+import Box from "@mui/material/Box";
+import { styled } from "@mui/material/styles";
+
+const Search = styled("div")(({ theme }) => ({
+  position: "relative",
+  borderRadius: theme.shape.borderRadius,
+  backgroundColor: " rgba(218, 216, 216, 0.26)",
+  "&:hover": {
+    backgroundColor: "rgba(218, 216, 216, 0.26)",
+    // width: "80%",
+  },
+  marginLeft: 0,
+  width: "100%",
+  [theme.breakpoints.up("sm")]: {
+    marginLeft: theme.spacing(1),
+    width: "100%",
+  },
+}));
+
+const StyledInputBase = styled(InputBase)(({ theme }) => ({
+  color: "inherit",
+  "& .MuiInputBase-input": {
+    padding: theme.spacing(1, 1, 1, 0),
+    // vertical padding + font size from searchIcon
+    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
+    transition: theme.transitions.create("width"),
+    width: "100%",
+    [theme.breakpoints.up("sm")]: {
+      width: "50ch",
+      "&:focus": {
+        width: "70ch",
+      },
+    },
+  },
+}));
 
 export default function UserList() {
   const [users, setUsers] = useState();
   const [loading, setLoading] = useState(false);
-
+  const [search, setSearch] = useState("");
   const [data, setData] = useState(userRows);
   const handleDelete = (id) => {
     setData(data.filter((item) => item.id !== id));
@@ -111,15 +145,42 @@ export default function UserList() {
   ];
 
   return (
-    <div className="userList">
-      {!loading && users && (
-        <DataGrid
-          rows={users?.users}
-          disableSelectionOnClick
-          columns={columns}
-          getRowId={(row) => row._id}
-        />
-      )}
-    </div>
+    <>
+      <div class="container d-flex justify-content-center mt-4">
+        <div className="">
+          <Box>
+            <Toolbar>
+              <Search>
+                <StyledInputBase
+                  placeholder="Search By User Name"
+                  inputProps={{ "aria-label": "search" }}
+                  onChange={(e) => {
+                    setSearch(e.target.value);
+                  }}
+                />
+              </Search>
+            </Toolbar>
+          </Box>
+        </div>
+      </div>
+      <div className="userList">
+        {!loading && users && (
+          <DataGrid
+            rows={users?.users?.filter((person) => {
+              if (search == "") {
+                return person;
+              } else if (
+                person.userName.toLowerCase().includes(search.toLowerCase())
+              ) {
+                return person;
+              }
+            })}
+            disableSelectionOnClick
+            columns={columns}
+            getRowId={(row) => row._id}
+          />
+        )}
+      </div>
+    </>
   );
 }

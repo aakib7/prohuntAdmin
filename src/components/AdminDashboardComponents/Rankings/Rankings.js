@@ -6,6 +6,7 @@ import { useState } from "react";
 import { rankRows } from "./RankingsDummyData";
 import WarningAmberIcon from "@mui/icons-material/WarningAmber";
 import MessageIcon from "@mui/icons-material/Message";
+import Paper from "@mui/material/Paper";
 
 export default function Rankings() {
   const [data, setData] = useState(rankRows);

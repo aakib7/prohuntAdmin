@@ -1,4 +1,4 @@
-import React, { PureComponent, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import {
   AreaChart,
   Area,
@@ -11,7 +11,6 @@ import {
 import axios from "axios";
 
 const Chart = () => {
-  var demoUrl = "https://codesandbox.io/s/simple-area-chart-4ujxw";
   const [data, setData] = useState([
     {
       name: "Page A",

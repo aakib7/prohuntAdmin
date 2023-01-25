@@ -8,6 +8,8 @@ import Reports from "./components/AdminDashboardComponents/Reports";
 import Rankings from "./components/AdminDashboardComponents/Rankings/Rankings";
 import Rank from "./components/AdminDashboardComponents/Rank/Rank";
 import Message from "./components/AdminDashboardComponents/Message/Message";
+import Quries from "./components/AdminDashboardComponents/Quries/Quries";
+import Subscription from "./components/AdminDashboardComponents/Subscription/Subscription";
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
           <Route path="reports" element={<Reports />} />
           <Route path="rankings" element={<Rankings />} />
           <Route path="/rank/:rankId" element={<Rank />} />
+          <Route path="/quries" element={<Quries />} />
+          <Route path="/subscription" element={<Subscription />} />
           <Route path="message" element={<Message />} />
         </Route>
       </Routes>

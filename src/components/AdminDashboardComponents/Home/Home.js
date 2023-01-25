@@ -4,7 +4,6 @@ import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import Chart from "../Chart";
 import Deposits from "../Deposits";
-import Orders from "../Orders";
 import axios from "axios";
 import { Typography } from "@mui/material";
 
@@ -42,9 +41,6 @@ const Home = () => {
   return (
     <Container maxWidth="lg" sx={{ mt: 4, mb: 4, pt: 5 }}>
       <Grid container spacing={3}>
-        {/* Chart */}
-
-        {/* Recent Deposits */}
         {!loading && records && (
           <>
             <Grid item xs={12} md={4} lg={3}>
