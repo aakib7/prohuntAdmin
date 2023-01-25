@@ -1,0 +1,257 @@
+.container{
+    display: flex;
+    margin-top: 10px;
+}
+
+.others{
+    flex: 4;
+    background-color: aqua;
+}
+
+.page_size{
+    height: auto;
+}
+
+.header_index{
+    z-index: 20;
+}
+
+.logo{
+    width: 130px;
+    height: auto;
+}
+
+.header_main{
+    background-color: white;
+}
+
+.button_style{
+   padding: 20px;
+}
+
+.header_container{
+    background-color: white;
+}
+
+.subheader_container{
+    background-color:white;
+    
+}
+
+.main_menu{
+    margin-left: 3%;
+}
+
+
+.main_menu_mobile_icon{
+    padding-bottom: 20px;
+}
+
+.main_menu_mobile_container{
+    background-color: white;
+}
+
+
+
+/* SIGNUP FORM */
+
+.button_group{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.form_group{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+
+.back_button{
+    padding: 20px;
+}
+
+.next_buttn{
+    padding: 20px;
+}
+
+.padder{
+    padding-top: 30px;
+}
+
+
+/*LOGIN FORM*/
+
+.page_size{
+    height: auto;
+}
+
+.login_form{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.text_field{
+    padding:20px;
+    width: 100%;
+}
+.login-form-container{
+    box-shadow: 0px 30px 20px #aaaaaa;
+    background-color: white;
+    width: 70%;
+    height:auto;
+    padding-left: 30px;
+    padding-bottom: 40px;
+    padding-top: 40px;
+    padding-right: 30px;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    box-shadow: 2in;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.submit_button{
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.login_form_title{
+    font-family: Helvetica;
+}
+
+.login_form_title_icon{
+    transform: scale(1.5);
+}
+
+.side_image{
+    width: 80%;
+  margin: 5%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* HOME */
+
+.section_1_img{
+    width: 110%;
+    height: auto;
+    margin-left: -100px;
+}
+
+.section_1_right{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    box-shadow: 2in;
+}
+
+.section_1_text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    background-color: white;
+    padding: 30px;
+    padding-bottom: 70px;
+    border-radius: 30px;
+    box-shadow: 2in;
+}
+
+.job_button{
+    width: 50%;
+}
+
+.category_button{
+    margin-left: 3px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding-top: 30px;
+}
+
+.searchbar{
+   margin-top: 20px !important;
+    width: 70%;
+    
+}
+
+.section_2_container{
+    background-color: white;
+    padding-top: 100px;
+    padding-bottom: 100px;
+   
+}
+
+.icon_box{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/*FOOTER*/
+
+.footer_container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+
+  }
+
+  .footer_social{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+
+  }
+
+.footer{
+    background-color: white;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 10%;
+    padding-right: 10%;
+    font-weight: bold;
+}
+
+.footer_logo{
+    width: 150%;
+    height: auto;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}
+
+.footer_heading{
+    text-align: center;
+
+}
+
+  .footer_logo{
+    width: 150px;
+  }
+
+  .footer_bottom_bar{
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5px;
+  }
