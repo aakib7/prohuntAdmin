@@ -12,6 +12,7 @@ import AssignmentIcon from "@mui/icons-material/Assignment";
 import MessageIcon from "@mui/icons-material/Message";
 import ContactEmergencyIcon from "@mui/icons-material/ContactEmergency";
 import SubscriptionsIcon from "@mui/icons-material/Subscriptions";
+import ReportIcon from "@mui/icons-material/Report";
 import { Link } from "react-router-dom";
 
 export const mainListItems = (
@@ -54,6 +55,14 @@ export const mainListItems = (
           <SubscriptionsIcon />
         </ListItemIcon>
         <ListItemText primary="Subscription" />
+      </ListItemButton>
+    </Link>{" "}
+    <Link to="/reportuser">
+      <ListItemButton>
+        <ListItemIcon>
+          <ReportIcon />
+        </ListItemIcon>
+        <ListItemText primary="Reports" />
       </ListItemButton>
     </Link>
     {/* <Link to="/rankings">
