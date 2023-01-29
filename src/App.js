@@ -11,6 +11,7 @@ import Message from "./components/AdminDashboardComponents/Message/Message";
 import Quries from "./components/AdminDashboardComponents/Quries/Quries";
 import Subscription from "./components/AdminDashboardComponents/Subscription/Subscription";
 import ReportUsers from "./components/reports/ReportUsers";
+import Payment from "./components/AdminDashboardComponents/payment/Payment";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path="/quries" element={<Quries />} />
           <Route path="/subscription" element={<Subscription />} />
           <Route path="/reportuser" element={<ReportUsers />} />
+          <Route path="/payment" element={<Payment />} />
 
           <Route path="message" element={<Message />} />
         </Route>

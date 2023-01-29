@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./userlist.css";
 import { DataGrid } from "@mui/x-data-grid";
 import { Link } from "react-router-dom";
-import { userRows } from "./userListDummyData";
+
 import axios from "axios";
 import Toolbar from "@mui/material/Toolbar";
 import InputBase from "@mui/material/InputBase";
@@ -46,14 +46,6 @@ export default function UserList() {
   const [users, setUsers] = useState();
   const [loading, setLoading] = useState(false);
   const [search, setSearch] = useState("");
-  const [data, setData] = useState(userRows);
-  const handleDelete = (id) => {
-    setData(data.filter((item) => item.id !== id));
-  };
-
-  const handleWarning = () => {};
-
-  const handleMessageToUser = () => {};
 
   const fetchUsers = () => {
     const config = {
@@ -71,7 +63,7 @@ export default function UserList() {
         config
       )
       .then((response) => {
-        console.log(response.data);
+        // console.log(response.data);
         setUsers(response.data);
         setLoading(false);
       })
@@ -83,6 +75,24 @@ export default function UserList() {
   useEffect(() => {
     fetchUsers();
   }, []);
+
+  const handleBlock = (id, block) => {
+    var status = !block;
+    axios
+      .post(`http://localhost:4000/admin/block/user`, {
+        id,
+        block: status,
+      })
+      .then((response) => {
+        // console.log(response.data);
+        fetchUsers();
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.log(error);
+        setLoading(false);
+      });
+  };
 
   const columns = [
     { field: "_id", headerName: "ID", width: 250 },
@@ -135,21 +145,19 @@ export default function UserList() {
       renderCell: (params) => {
         return (
           <>
-            <Link to={"/user/" + params.row.id}>
-              <button className="userListEdit">Block</button>
+            <Link>
+              <button
+                className="userListEdit"
+                style={{
+                  background: params.row.isBlocked ? "green" : "red",
+                }}
+                onClick={() => {
+                  handleBlock(params.row._id, params.row.isBlocked);
+                }}
+              >
+                {params.row.isBlocked ? "Unblock" : "Block"}
+              </button>
             </Link>
-            {/* <HighlightOffIcon
-              className="userListDelete"
-              onClick={() => handleDelete(params.row.id)}
-            />
-            <WarningAmberIcon
-              className="userListDelete"
-              onClick={() => handleWarning(params.row.id)}
-            />
-            <MessageIcon
-              className="userListDelete"
-              onClick={() => handleMessageToUser(params.row.id)}
-            /> */}
           </>
         );
       },

@@ -14,6 +14,7 @@ import ContactEmergencyIcon from "@mui/icons-material/ContactEmergency";
 import SubscriptionsIcon from "@mui/icons-material/Subscriptions";
 import ReportIcon from "@mui/icons-material/Report";
 import { Link } from "react-router-dom";
+import PaidIcon from "@mui/icons-material/Paid";
 
 export const mainListItems = (
   <React.Fragment>
@@ -65,22 +66,13 @@ export const mainListItems = (
         <ListItemText primary="Reports" />
       </ListItemButton>
     </Link>
-    {/* <Link to="/rankings">
+    <Link to="/payment">
       <ListItemButton>
         <ListItemIcon>
-          <LayersIcon />
+          <PaidIcon />
         </ListItemIcon>
-        <ListItemText primary="Rankings" />
+        <ListItemText primary="Payments" />
       </ListItemButton>
     </Link>
-    <Link to="/message">
-      <ListItemButton>
-        <ListItemIcon>
-          <MessageIcon />
-        </ListItemIcon>
-
-        <ListItemText primary="Messages" />
-      </ListItemButton>
-    </Link> */}
   </React.Fragment>
 );
