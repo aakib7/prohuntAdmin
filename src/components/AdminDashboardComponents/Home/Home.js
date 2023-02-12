@@ -20,11 +20,7 @@ const Home = () => {
     };
     setLoading(true);
     axios
-      .get(
-        `http://localhost:4000/admin`,
-
-        config
-      )
+      .get(`http://localhost:4000/admin`, config)
       .then((response) => {
         // console.log(response.data);
         setRecords(response.data);
@@ -69,7 +65,7 @@ const Home = () => {
               >
                 <Deposits title={"Total Employer"} total={records?.employer} />
               </Paper>
-            </Grid>{" "}
+            </Grid>
             <Grid item xs={12} md={4} lg={3}>
               <Paper
                 sx={{

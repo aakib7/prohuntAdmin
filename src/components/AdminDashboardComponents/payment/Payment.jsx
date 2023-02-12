@@ -46,7 +46,7 @@ function Payment() {
       {!loading && payments && (
         <>
           <div className="text-center mt-4" style={{ width: "100%" }}>
-            <h5 style={{ display: "inline-block" }}>Total Reports :</h5>
+            <h5 style={{ display: "inline-block" }}>Total Payments :</h5>
             <h5 style={{ display: "inline-block" }}>{payments.length}</h5>
 
             <table className="table table-hover table-striped">

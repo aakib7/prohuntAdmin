@@ -9,10 +9,11 @@ import List from "@mui/material/List";
 import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
-import Badge from "@mui/material/Badge";
-import Link from "@mui/material/Link";
+
+import { Link } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
+import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import { mainListItems } from "./listItems";
 import Tooltip from "@mui/material/Tooltip";
@@ -144,9 +145,14 @@ function DashboardContent() {
               Dashboard
             </Typography>
             <IconButton color="inherit">
-              <Badge badgeContent={4} color="secondary">
-                <NotificationsIcon />
-              </Badge>
+              <a
+                href="http://localhost:3000/chat"
+                target="_blank"
+                rel="noreferrer"
+                style={{ color: "white" }}
+              >
+                <MailIcon />
+              </a>
             </IconButton>
             <Box sx={{ flexGrow: 0 }}>
               <Tooltip title="Open settings">

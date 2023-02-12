@@ -157,6 +157,30 @@ export default function UserList() {
               >
                 {params.row.isBlocked ? "Unblock" : "Block"}
               </button>
+            </Link>{" "}
+            <Link>
+              <button
+                className="userListEdit"
+                style={{
+                  background: params.row.isBlocked ? "green" : "red",
+                }}
+                onClick={() => {
+                  handleBlock(params.row._id, params.row.isBlocked);
+                }}
+              >
+                {params.row.isBlocked ? "Warned" : "Warning"}
+              </button>
+            </Link>{" "}
+            <Link>
+              <button
+                className="userListEdit"
+                style={{
+                  background: params.row.isBlocked ? "green" : "red",
+                }}
+                onClick={() => {
+                  handleBlock(params.row._id, params.row.isBlocked);
+                }}
+              ></button>
             </Link>
           </>
         );
